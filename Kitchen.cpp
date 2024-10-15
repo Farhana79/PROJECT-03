@@ -196,39 +196,24 @@ int Kitchen::releaseDishesOfCuisineType(const std::string &cuisine_type){
      */
 void Kitchen::kitchenReport()
 {
-    int counts[] = {0,0,0,0,0,0,0};
-    int i;
-    std::string cuisine_type;
-
-    for(i=0; i < getCurrentSize(); i++){
-        cuisine_type =  items_[i].getCuisineType();
-        if (cuisine_type == "ITALIAN"){
-            counts[0] = counts[0] + 1;
-        }
-        else if (cuisine_type == "MEXICAN"){
-            counts[1] = counts[1] + 1;
-        }
-        else if (cuisine_type == "CHINESE"){
-            counts[2] = counts[2] + 1;
-        }
-        else if (cuisine_type == "INDIAN"){
-            counts[3] = counts[3] + 1;
-        }
-        else if (cuisine_type == "AMERICAN"){
-            counts[4] = counts[4] + 1;
-        }
-        else if (cuisine_type == "FRENCH"){
-            counts[5] = counts[5] + 1;
-        }
-        else if (cuisine_type == "OTHER"){
-            counts[6] = counts[6] + 1;
-        }
-    }
-    std::cout << "ITALIAN: "<< counts[0] <<"\nMEXICAN: " << counts[1] << "\nCHINESE: " << counts[2]
-    <<"\nINDIAN: " << counts[3] << "\nAMERICAN: " << counts[4] << "\nFRENCH: " << counts[5] << "\nOTHER: " << counts[6]
-    <<std::endl << std::endl;
-
-    std::cout << "AVERAGE PREP TIME: " << calculateAvgPrepTime() <<"\nELABORATE DISHES: "<< calculateElaboratePercentage() << "%\n\n";
+  int italian = tallyCuisineType("ITALIAN");
+  int mexican = tallyCuisineType("MeXICAN");
+  int chinese = tallyCuisineType("CHINESE");
+  int indian = tallyCuisineType("INDIAN");
+  int american = tallyCuisineType("AMERICAN");
+  int french = tallyCuisineType("FRENCH");
+  int other = tallyCuisineType("OTHER");
+    
+  std::cout << "ITALIAN: " << italian << std::endl;
+  std::cout << "MEXICAN: " << mexican << std::endl;
+  std::cout << "CHINESE: " << chinese << std::endl;
+  std::cout << "INDIAN: " << indian << std::endl;
+  std::cout << "AMERICAN: " << american << std::endl;
+  std::cout << "FRENCH: " << french << std::endl;
+  std::cout << "OTHER: " << other << std::endl;
+  std::cout << "\nAVERAGE PREP TIME: " << calculateAvgPrepTime() << std::endl;
+  std::cout << "ELABORATE DISHES: " << std::fixed << std::setprecision(2) << calculateElaboratePercentage() << "%.\n\n";
 }
+
 
 

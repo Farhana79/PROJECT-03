@@ -14,7 +14,10 @@
 
 #include "ArrayBag.hpp"
 #include "Dish.hpp"
+#include <vector>
+#include <iostream>
 #include <cmath>
+#include <iomanip>
 
 class Kitchen: public ArrayBag<Dish>{
 public:
@@ -33,7 +36,7 @@ public:
      * Hint: Use the above definition of equality to help determine if a
      * `Dish` is already in the kitchen.
      */
-     bool newOrder(const Dish & dish);
+     bool newOrder(const Dish& a_dish);
 
     /**
      * @param : A reference to a `Dish` leaving the kitchen.
@@ -41,24 +44,24 @@ public:
      * @post : Removes the dish from the kitchen and updates the preparation time sum.
      * If the `Dish` is elaborate, it also updates the elaborate count.
      */
-     bool serveDish(const Dish& dish);
+     bool serveDish(const Dish& a_dish);
 
     /**
      * @return : The integer sum of preparation times for all the dishes currently in the kitchen.
      */
-    int getPrepTimeSum() const;
+    int getPrepTimeSum();
 
     /**
      * @return : The average preparation time (int) of all the dishes in the
      * kitchen. The lowest possible average prep time should be 0.
      * @post : Computes the average preparation time (double) of the kitchen rounded to the NEAREST integer.
      */
-    int calculateAvgPrepTime() const;
+    int calculateAvgPrepTime();
 
     /**
      * @return : The integer count of the elaborate dishes in the kitchen.
      */
-     int elaborateDishCount() const;
+     int elaborateDishCount();
 
     /**
      * @return : The percentage (double) of all the elaborate dishes in the
@@ -66,7 +69,7 @@ public:
      * @post : Computes the percentage of elaborate dishes in the kitchen
      * rounded up to 2 decimal places.
      */
-    double calculateElaboratePercentage() const;
+    double calculateElaboratePercentage();
 
 
     /**
@@ -76,7 +79,7 @@ public:
      * If the argument string does not match one of the expected cuisine types, the tally is zero.
      * NOTE: No pre-processing of the input string necessary, only uppercase input will match.
      */
-    int tallyCuisineTypes(const std::string& cuisineType) const;
+    int tallyCuisineTypes(const std::string& cuisinetype);
 
 
     /**
@@ -119,9 +122,9 @@ public:
      *          AVERAGE PREP TIME: 62
      *          ELABORATE DISHES: 53.85%
      */
-     void kitchenReport() const;
+     void kitchenReport();
 private:
-    int total_prep_time_;
+    int totalprep_time_;
     int count_elaborate_;
 };
 

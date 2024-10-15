@@ -88,7 +88,7 @@ public:
      * @post : Removes all dishes from the kitchen whose preparation time is less than the given time.
      * @return : The number of dishes removed from the kitchen.
      */
-    int releaseDishesBelowPrepTime(int threshold);
+    int releaseDishesBelowPrepTime(int prepTimeThreshold);
 
 
     /**
@@ -101,7 +101,7 @@ public:
      * types, do not remove any dishes.
      *
      */
-    int releaseDishesOfCuisineType(const std::string &cuisine_type);
+    int releaseDishesOfCuisineType(const std::string& cuisineType);
 
 
     /**

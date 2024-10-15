@@ -6,8 +6,8 @@
  * It provides constructors, accessor and mutator functions, and a display function to manage and present
  * the details of a dish.
  * 
- * @date [Insert Date]
- * @author [Your Name]
+ * @date [10/15/2024]
+ * @author [Farhana Sultana]
  */
 
 #ifndef DISH_HPP

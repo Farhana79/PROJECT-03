@@ -5,8 +5,8 @@
  * The Dish class includes methods to manage and present the details of a dish, including name, ingredients, preparation time, price, and cuisine type.
  * The implementation ensures that the dish name is validated and correctly formatted.
  * 
- * @date [Insert Date]
- * @author [Your Name]
+ * @date [10/15/2024]
+ * @author [Farhana Sultana]
  */
 
 #include "Dish.hpp"

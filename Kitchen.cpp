@@ -14,7 +14,7 @@
  * Default constructor.
  * Default-initializes all private members.
  */
-Kitchen::Kitchen():total_prep_time_(0),count_elaborate_(0) {
+Kitchen::Kitchen() : ArrayBag<Dish>(), total_prep_time_(0),count_elaborate_(0) {
 
 }// end default constructor
 
@@ -27,7 +27,7 @@ Kitchen::Kitchen():total_prep_time_(0),count_elaborate_(0) {
  * Hint: Use the above definition of equality to help determine if a
  * `Dish` is already in the kitchen.
  */
-bool Kitchen::newOrder(const Dish &dish) {
+bool Kitchen::newOrder(const Dish& a_dish) {
     bool success = add(dish); //Add only if not found and return the status
     if (success){
         total_prep_time_ += dish.getPrepTime();
@@ -44,7 +44,7 @@ bool Kitchen::newOrder(const Dish &dish) {
      * @post : Removes the dish from the kitchen and updates the preparation time sum.
      * If the `Dish` is elaborate, it also updates the elaborate count.
      */
-bool Kitchen::serveDish(const Dish &dish) {
+bool Kitchen::serveDish(const Dish& a_dish) {
     bool remove_success = remove(dish);
 
     if (remove_success){
@@ -59,7 +59,7 @@ bool Kitchen::serveDish(const Dish &dish) {
 /**
  * @return : The integer sum of preparation times for all the dishes currently in the kitchen.
  */
-int Kitchen::getPrepTimeSum() const {
+int Kitchen::getPrepTimeSum() {
     return total_prep_time_;
 }
 /**
@@ -67,7 +67,7 @@ int Kitchen::getPrepTimeSum() const {
  * kitchen. The lowest possible average prep time should be 0.
  * @post : Computes the average preparation time (double) of the kitchen rounded to the NEAREST integer.
  */
-int Kitchen::calculateAvgPrepTime() const {
+int Kitchen::calculateAvgPrepTime() {
     int current_size = getCurrentSize();
     double average;
 
@@ -79,7 +79,7 @@ int Kitchen::calculateAvgPrepTime() const {
     return static_cast<int>(average + 0.5); // rounding and truncate method
 }
 
-int Kitchen::elaborateDishCount() const {
+int Kitchen::elaborateDishCount() {
     return count_elaborate_;
 }
 
@@ -89,7 +89,7 @@ int Kitchen::elaborateDishCount() const {
  * @post : Computes the percentage of elaborate dishes in the kitchen
  * rounded up to 2 decimal places.
  */
-double Kitchen::calculateElaboratePercentage() const {
+double Kitchen::calculateElaboratePercentage() {
     int totalDishes = getCurrentSize();
     double percentage;
 
@@ -112,7 +112,7 @@ double Kitchen::calculateElaboratePercentage() const {
  * If the argument string does not match one of the expected cuisine types, the tally is zero.
  * NOTE: No pre-processing of the input string necessary, only uppercase input will match.
  */
-int Kitchen::tallyCuisineTypes(const std::string& cuisineType) const {
+int Kitchen::tallyCuisineTypes(const std::string& cuisineType) {
     int count = 0;
 
     // Count the number of dishes with the matching cuisine type
@@ -197,7 +197,8 @@ int Kitchen::releaseDishesOfCuisineType(const std::string &cuisine_type){
      *          AVERAGE PREP TIME: 62
      *          ELABORATE DISHES: 53.85%
      */
-void Kitchen::kitchenReport() const{
+void Kitchen::kitchenReport()
+{
     int counts[] = {0,0,0,0,0,0,0};
     int i;
     std::string cuisine_type;

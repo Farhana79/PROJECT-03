@@ -93,7 +93,7 @@ int Kitchen::elaborateDishCount() {
 double Kitchen::calculateElaboratePercentage() 
 {
     double elaborate_percent = (count_elaborate_>0) ?  (double(count_elaborate_) / item_count_) * 100: 0.0;
-    return std::ceil(elaborate_percent*100.0) / 100.0; //round up to 2 decimal places
+    return std::ceil(elaborate_percent*10000.0) / 100.0; //round up to 2 decimal places
 
 }
 
@@ -197,7 +197,7 @@ int Kitchen::releaseDishesOfCuisineType(const std::string &cuisine_type){
 void Kitchen::kitchenReport()
 {
   int italian = tallyCuisineType("ITALIAN");
-  int mexican = tallyCuisineType("MeXICAN");
+  int mexican = tallyCuisineType("MEXICAN");
   int chinese = tallyCuisineType("CHINESE");
   int indian = tallyCuisineType("INDIAN");
   int american = tallyCuisineType("AMERICAN");

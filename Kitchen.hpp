@@ -79,7 +79,7 @@ public:
      * If the argument string does not match one of the expected cuisine types, the tally is zero.
      * NOTE: No pre-processing of the input string necessary, only uppercase input will match.
      */
-    int tallyCuisineTypes(const std::string& cuisinetype);
+    int tallyCuisineTypes(const std::string& cuisineType);
 
 
     /**

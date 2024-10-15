@@ -32,7 +32,7 @@ bool Kitchen::newOrder(const Dish& a_dish)
     if (add(a_dish)) 
     {
         totalPrepTime += a_dish.getPrepTime();
-        if(a_dish.getIngredientCount() >= 5 && a_dish.getPrepTime() >= 60) 
+        if(a_dish.getIngredientCount() && a_dish.getPrepTime()) 
             count_elaborate_++;
         
         return true;
@@ -53,7 +53,7 @@ bool Kitchen::serveDish(const Dish& a_dish)
     if (remove(a_dish)) 
     {
         totalPrepTime -= a_dish.getPrepTime();
-        if(a_dish.getIngredientCount() >= 5 && a_dish.getPrepTime() >= 60)
+        if(a_dish.getIngredientCount() && a_dish.getPrepTime())
             count_elaborate_--;
         
         return true;

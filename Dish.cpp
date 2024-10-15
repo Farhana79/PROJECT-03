@@ -95,7 +95,7 @@ void Dish::display() const {
     std::cout << "Cuisine Type: " << getCuisineType() << std::endl;
 }
 bool Dish::operator==(const Dish& rhs) const {
-    return(name_ == rhs.getName() && getCuisineType() == rhs.getCuisineType() && prep_time_ == rhs.getPrepTime() && price_ == rhs.getPrice();
+    return(name_ == rhs.getName() && cuisine_type() == rhs.getCuisineType() && prep_time_ == rhs.getPrepTime() && price_ == rhs.getPrice();
 }
 
 bool Dish::operator!=(const Dish& rhs) const {

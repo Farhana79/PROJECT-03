@@ -94,11 +94,13 @@ void Dish::display() const {
     std::cout << std::fixed << std::setprecision(2) << "Price: $" << price_ << std::endl;
     std::cout << "Cuisine Type: " << getCuisineType() << std::endl;
 }
-bool Dish::operator==(const Dish& rhs) {
+bool Dish::operator==(const Dish& rhs) const
+{
     return(name_ == rhs.getName() && cuisine_type_ == rhs.getCuisineType() && prep_time_ == rhs.getPrepTime() && price_ == rhs.getPrice());
 }
 
-bool Dish::operator!=(const Dish& rhs) {
+bool Dish::operator!=(const Dish& rhs) const
+{
     return(!(*this == rhs));
 }
 

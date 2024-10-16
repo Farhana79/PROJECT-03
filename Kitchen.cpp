@@ -29,9 +29,9 @@ Kitchen::Kitchen() : ArrayBag<Dish>(), total_prep_time_{0}, count_elaborate_{0} 
  */
 bool Kitchen::newOrder(const Dish& a_dish) 
 {
-    if (add(a_dish)) 
+    if(add(a_dish)) 
     {
-        totalPrepTime += a_dish.getPrepTime();
+        total_prep_time_ += a_dish.getPrepTime();
         if(a_dish.elaborateDishCount() && a_dish.getPrepTime()) 
             count_elaborate_++;
         
@@ -50,9 +50,9 @@ bool Kitchen::newOrder(const Dish& a_dish)
      */
 bool Kitchen::serveDish(const Dish& a_dish) 
 {
-    if (remove(a_dish)) 
+    if(remove(a_dish)) 
     {
-        totalPrepTime -= a_dish.getPrepTime();
+        total_prep_time_ -= a_dish.getPrepTime();
         if(a_dish.elaborateDishCount() && a_dish.getPrepTime())
             count_elaborate_--;
         

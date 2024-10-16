@@ -15,6 +15,8 @@
 
 #include <string>
 #include <vector>
+#include <iostream>
+#include <cctype>
 
 class Dish {
 public:
